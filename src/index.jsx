@@ -5,11 +5,11 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
-import { legacy_createStore as createStore } from 'redux';
-import reducer from './Store/Reducer';
+// import { legacy_createStore as createStore } from 'redux';
+import { store } from './app/store';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

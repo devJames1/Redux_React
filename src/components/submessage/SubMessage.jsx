@@ -1,11 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { buttonChange } from './subMessageSlice';
 //for redux
 // import { connect } from 'react-redux';
 
 //using redux, set the store in index.js using store = createStore(reducer)
 
-function NewComp(props) {
+function SubMessage() {
+  const message = useSelector((state) => state.subMessage.message);
+  const dispatch = useDispatch();
+
   let styles = {
     fontStyle: 'italic',
     color: 'purple',
@@ -13,27 +17,27 @@ function NewComp(props) {
 
   return (
     <div className="App">
-      <h3 style={styles}>{props.message}</h3>
-      <button onClick={props.buttonChange}>Subscribe</button>
+      <h3 style={styles}>{message}</h3>
+      <button onClick={() => dispatch(buttonChange())}>Subscribe</button>
     </div>
   );
 }
 
-const mapSateToProps = (state) => {
-  return {
-    message: state.message,
-  };
-};
+// const mapSateToProps = (state) => {
+//   return {
+//     message: state.message,
+//   };
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    buttonChange: () => {
-      dispatch({ type: 'MESSAGE CHANGE' });
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     buttonChange: () => {
+//       dispatch({ type: 'MESSAGE CHANGE' });
+//     },
+//   };
+// };
 
-export default connect(mapSateToProps, mapDispatchToProps)(NewComp);
+export default SubMessage;
 
 //USING VANILLA REACT WITHOUT REDUX REDUCERS AND STORES
 

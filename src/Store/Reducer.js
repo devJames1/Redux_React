@@ -1,22 +1,24 @@
-const initialState = {
-  message: 'Subscribe to Agileconsult',
-};
+//USED  WITH OLD METHOD OF USING REDUX
 
-const reducer = (state = initialState, action) => {
-  const newState = { ...state };
+// const initialState = {
+//   message: 'Subscribe to Agileconsult',
+// };
 
-  switch (action.type) {
-    case 'MESSAGE CHANGE':
-      newState.message = 'Thank you for subscribing';
-      break;
-    default:
-      console.log('action mismatch');
-  }
+// const reducer = (state = initialState, action) => {
+//   const newState = { ...state };
 
-  // if (action.type === 'MESSAGE CHANGE') {
-  //   newState.message = 'Thank you for subscribing';
-  // }
-  return newState;
-};
+//   switch (action.type) {
+//     case 'MESSAGE CHANGE':
+//       newState.message = 'Thank you for subscribing';
+//       break;
+//     default:
+//       console.log('action mismatch');
+//   }
 
-export default reducer;
+//   // if (action.type === 'MESSAGE CHANGE') {
+//   //   newState.message = 'Thank you for subscribing';
+//   // }
+//   return newState;
+// };
+
+// export default reducer;
